@@ -31,6 +31,7 @@ app.post("/api/shorturl", function (req, res) {
   } catch (error) {
     res.json({ error: "Invalid url" })
   }
+  console.log(url)
   dns.lookup(url.hostname, function (err) {
     if (err) res.json({ error: "Invalid url" })
     else {
